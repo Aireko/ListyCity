@@ -8,7 +8,24 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+    private List<City> cities = new ArrayList<>();
+
+    /**
+     * This adds a city to the list if the city does not exist in the list
+     *
+     * @param city this is a candidate city to add
+     */
+    public void add(City city) {
+        if (cities.contains(city)) {
+            throw new IllegalArgumentException();
+        }
+
+        cities.add(city);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
