@@ -35,9 +35,10 @@ public class City implements Comparable<City> {
     }
 
     /**
+     * basically a sort
      *
-     * @param o
-     * @return
+     * @param o city object
+     * @return negative if city comes before the other city, 0 if they're equal, positive if city comes after the other city
      */
     @Override
     public int compareTo(City o) {
