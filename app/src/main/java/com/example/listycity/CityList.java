@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class CityList {
     private List<City> cities = new ArrayList<>();
+
     /**
      * This adds a city to the list if the city does not exist
      * @param city
@@ -20,6 +21,7 @@ public class CityList {
         }
         cities.add(city);
     }
+
     /**
      * This returns a sorted list of cities
      * @return
@@ -31,10 +33,23 @@ public class CityList {
         return list;
     }
 
+    /**
+     * check if a city is in the list
+     *
+     * @param city city to check
+     * @return true if the city is in list, false if not
+     */
     public boolean hasCity(City city) {
         return cities.contains(city);
     }
 
+    /**
+     * deletes a city from the list
+     *
+     * @param city the city to delete
+     *
+     * @throws IllegalArgumentException if the city is not in the list
+     */
     public void delete(City city) {
         if (!cities.contains(city)) {
             throw new IllegalArgumentException("City not found in list");
@@ -42,6 +57,11 @@ public class CityList {
         cities.remove(city);
     }
 
+    /**
+     * get the count of cities in list
+     *
+     * @return numbewr of cities in the list
+     */
     public int countCities() {
         return cities.size();
     }

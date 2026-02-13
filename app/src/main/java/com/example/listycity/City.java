@@ -47,6 +47,13 @@ public class City implements Comparable<City> {
         return this.city.compareTo(((City) o).getCity()); // this.city refers to the city name
     }
 
+    /**
+     * checks if two city objects are equal
+     * 2 cities are equal if they have the same city name and proovince
+     *
+     * @param o   the reference object with which to compare.
+     * @return true if the cities are equal, false otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -60,7 +67,10 @@ public class City implements Comparable<City> {
         return Objects.equals(city, city1.city) && Objects.equals(province, city1.province);
     }
 
-
+    /**
+     * generates hash code for the city object
+     * @return both city name nad provicnce for hash calculations
+     */
     @Override
     public int hashCode() {
         return Objects.hash(city, province);
